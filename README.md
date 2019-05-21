@@ -1,7 +1,7 @@
 # Assignment 5
 **Assignment and Code Blog entry due at 11:59pm on Monday, 6/3/2019**
 
-**Demo due by 5:00pm on Friday, 6/14/2012**
+**Demo due by 5:00pm on Friday, 6/14/2019**
 
 The goal of this assignment is to start working with Handlebars and Express.  The code that's currently in this repo implements a site that's served completely statically.  Specifically, there is a directory `public/` that contains a number of static files that are served by a simple Express server in `server.js`.  Your job in this assignment is to templatize this existing site.  Specifically, you must complete the following tasks:
 
