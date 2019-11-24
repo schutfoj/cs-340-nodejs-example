@@ -2,10 +2,11 @@
   "name": "master-assignment-5",
   "version": "1.0.0",
   "description": "Handlebars templating",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "hcompile": "node ./node_modules/.bin/handlebars ./views/partials/twit.hbs -f ./public/templates.js"
+    "start": "node .",
+    "hcompile": "npx handlebars ./src/views/partials/twit.hbs -f ./src/public/templates.js -e hbs"
   },
   "repository": {
     "type": "git",
@@ -18,9 +19,14 @@
   },
   "homepage": "https://github.com/osu-cs290-sp19/master-assignment-5#readme",
   "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
     "express": "^4.17.0",
     "express-handlebars": "^3.1.0",
-    "handlebars": "^4.1.2"
+    "handlebars": "^4.5.3",
+    "mysql": "^2.17.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "forever": "^1.0.0"
+  }
 }
