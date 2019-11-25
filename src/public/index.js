@@ -1,12 +1,4 @@
 /*
- * Write your client-side JS code in this file.  Make sure to add your name and
- * @oregonstate.edu email address below.
- *
- * Name: Braden Hitchcock
- * Email: hitchcob@oregonstate.edu
- */
-
-/*
  * This function should use your Handlebars twit template to generate HTML
  * representing a single twit, given the twit text and author as arguments to
  * the function.  The generated HTML should then be inserted into the DOM at
@@ -32,7 +24,10 @@
  */
 function insertNewTwit(twitText, twitAuthor) {
   // Use handlebars to create a new twit
-  let twitElem = Handlebars.templates.twit({ text: twitText, author: twitAuthor });
+  let twitElem = Handlebars.templates.twit({
+    text: twitText,
+    author: twitAuthor
+  });
 
   var twitContainer = document.querySelector('main.twit-container');
   twitContainer.innerHTML += twitElem;
@@ -56,9 +51,11 @@ function insertNewTwit(twitText, twitAuthor) {
 var allTwits = [];
 
 /*
- * This function intercepts a form's submission and checks whether all of the required inputs were supplied by
- * the user. If so, this function allows the POST request to be made for a new twit to be inserted into the database.
- * If the user did not supply a required input, they instead recieve an alert, and no request is made.
+ * This function intercepts a form's submission and checks whether all of the 
+ * required inputs were supplied by the user. If so, this function allows the 
+ * POST request to be made for a new twit to be inserted into the database.
+ * If the user did not supply a required input, they instead recieve an alert, 
+ * and no request is made.
  */
 function handleCreateTwitFormSubmit(e) {
   var twitText = document.getElementById('twit-text-input').value;
@@ -140,7 +137,9 @@ function twitMatchesSearchQuery(twit, searchQuery) {
    * author contains the search query.
    */
   searchQuery = searchQuery.trim().toLowerCase();
-  return (twit.author + ' ' + twit.text).toLowerCase().indexOf(searchQuery) >= 0;
+  return (
+    (twit.author + ' ' + twit.text).toLowerCase().indexOf(searchQuery) >= 0
+  );
 }
 
 /*
@@ -212,12 +211,16 @@ window.addEventListener('DOMContentLoaded', function() {
     createTwitButton.addEventListener('click', showCreateTwitModal);
   }
 
-  var modalCloseButton = document.querySelector('#create-twit-modal .modal-close-button');
+  var modalCloseButton = document.querySelector(
+    '#create-twit-modal .modal-close-button'
+  );
   if (modalCloseButton) {
     modalCloseButton.addEventListener('click', hideCreateTwitModal);
   }
 
-  var modalCancalButton = document.querySelector('#create-twit-modal .modal-cancel-button');
+  var modalCancalButton = document.querySelector(
+    '#create-twit-modal .modal-cancel-button'
+  );
   if (modalCancalButton) {
     modalCancalButton.addEventListener('click', hideCreateTwitModal);
   }
